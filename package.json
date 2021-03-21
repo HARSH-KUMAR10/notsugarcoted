@@ -1,0 +1,15 @@
+{
+  "name": "hackpsu",
+  "version": "1.0.0",
+  "description": "hackathon 'HackPSU' algorithm to predict if a female can get diabetes or not",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "Harsh Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
