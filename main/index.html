@@ -314,17 +314,7 @@
           var str = "/result?glucose="+glucose.value;
           str+="&bmi="+bmi.value+"&age="+age.value+"&bp="+bp.value;
           str+="&insulin="+insulin.value+"&dpdf="+dpdf.value;
-          fetch(str)
-          .then(res => res.json())
-          .then((data)=>{
-              if(data[1]==1){
-                  document.getElementById('result').innerHTML="Positive";
-              }else{
-                  document.getElementById('result').innerHTML="Negative";
-              }
-              containers.style.display="block";
-              HideAllDIV();
-              if(glucose.value>=140){
+          if(glucose.value>=140){
                 DIVglucose.style.display="block";
               }
               if(insulin.value>50){
@@ -336,6 +326,17 @@
               if(bmi.value>25){
                 DIVbmi.style.display="block";
               }
+          fetch(str)
+          .then(res => res.json())
+          .then((data)=>{
+              if(data[1]==1){
+                  document.getElementById('result').innerHTML="Positive";
+              }else{
+                  document.getElementById('result').innerHTML="Negative";
+              }
+              containers.style.display="block";
+              HideAllDIV();
+              
                 DIVgenetics.style.display="block";
           });
       }
